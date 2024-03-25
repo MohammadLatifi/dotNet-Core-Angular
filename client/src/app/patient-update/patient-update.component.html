@@ -1,0 +1,128 @@
+<!-- The Modal -->
+<div class="modal text-dark" [attr.id]="'update-patient-'+ updatePatientRequest.patientId">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">edit Patient {{updatePatientRequest.patientId}}</h4>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form class="d-flex flex-column gap-3 " #form="ngForm" (ngSubmit)="updatePatient()">
+            <div class="form-group">
+                <label class="mb-2" for="name">ID:</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="patientId"
+                    required
+                    [(ngModel)]="updatePatientRequest.patientId"
+                    name="patientId"
+                    readonly    
+                />
+                
+            </div>
+              <div class="form-group">
+                <label class="mb-2" for="name">Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  required
+                  [(ngModel)]="updatePatientRequest.name"
+                  name="name"
+                />
+              
+              </div>
+              <div class="form-group">
+                <label class="mb-2" for="age" class="form-label">Age:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="age"
+                  [(ngModel)]="updatePatientRequest.age"
+                  name="age"
+               
+                
+                  required
+                />
+               
+              </div>
+  
+              <div class="form-group">
+                <label class="mb-2" for="power">Gender:</label>
+                <select
+                  class="form-control"
+                  id="gender"
+                  required
+                  [(ngModel)]="updatePatientRequest.gender"
+                  name="gender"
+              
+                 
+                >
+                  <option *ngFor="let gender of genders" [value]="gender">
+                    {{ gender }}
+                  </option>
+                </select>
+               
+              </div>
+              <div class="form-group">
+                <label class="mb-2" for="address">Address:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  required
+                  [(ngModel)]="updatePatientRequest.address"
+                  name="address"
+               
+                 
+                />
+               
+              </div>
+              <div class="form-group">
+                  <label class="mb-2" for="contact">Email:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="contact"
+                    required
+                    [(ngModel)]="updatePatientRequest.contact"
+                    name="contact"
+                  
+                   
+                  />
+                  
+                </div>
+              <div class="d-flex justify-content-end">
+
+                <button
+                type="submit"
+                class="btn btn-success w-25"                
+                >
+                Submit
+              </button>
+            </div>
+              
+            </form>
+          </div>
+  
+          
+
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger w-25" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

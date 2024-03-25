@@ -1,0 +1,50 @@
+<!-- The Modal -->
+<div
+  class="modal text-dark"
+  [attr.id]="'delete-patient-' + id"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">
+          delete Patient ID: {{ id }}
+        </h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div>
+          <p>
+            You are going to delete this patient record permanentely.
+          </p>
+          <p>
+            Are you sure?
+          </p>
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button (click)="deletePatientById()" class="btn btn-success w-25">
+            Yes
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger w-25"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
